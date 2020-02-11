@@ -9,11 +9,9 @@ function App() {
   return (
     <div className="App">
         <Router>
-            <div>
                 <Route exact path="/">
                     <Home/>
                 </Route>
-            </div>
         </Router>
     </div>
   );
