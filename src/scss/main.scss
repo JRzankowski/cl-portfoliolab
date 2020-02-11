@@ -1,11 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:300,400&display=swap');
 
 @import './normalize.css';
 @import './settings/fonts.scss';
 @import './settings/colors.scss';
 @import './header.scss';
+@import './mainSection.scss';
 *{
   box-sizing: border-box;
+}
+.container{
+  //max-width: 1800px;
+  margin: 0 auto;
+  //overflow: hidden;
 }
 body{
   font-family: $font-base;
