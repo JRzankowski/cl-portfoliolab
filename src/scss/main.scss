@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap');
+
+@import './normalize.css';
+@import './settings/fonts';
+@import './settings/colors';
+
+body{
+  font-family: $font-base;
+}
