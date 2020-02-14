@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import HomeHeader from "./HomeHeader/HomeHeader";
 import HomeMainSection from "./HomeMainSection";
+import Columns from "./columnsSection";
 
 export default class Home extends Component {
     render() {
@@ -9,6 +10,7 @@ export default class Home extends Component {
             <div className="container">
                 <HomeHeader/>
                 <HomeMainSection/>
+                <Columns/>
 
             </div>
         );

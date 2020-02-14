@@ -1,36 +1,64 @@
 .main-section{
   display: flex;
   position: relative;
-  justify-content: space-between;
+
   z-index: 4;
   overflow: visible;
   height: 800px;
+  @media(max-width: 1250px){
+    justify-content: center;
+    align-items: center;
+
+  }
   &--heroImg{
     position: relative;
     z-index: 5;
-    bottom: 136px;
-    background: url("../assets/output-onlinepngtools.png") -409px 0px no-repeat;
+    background: url("../assets/Home-Hero-Image.jpg") -395px -193px no-repeat;
     //background-size: cover;
-    min-width: 900px;
-    height: 963px;
-
-    margin-right: 100px;
+    width: 900px;
+    transition: .1s;
+    @media (max-width: 1650px){
+      width: 700px;
+      background-position: -598px -193px;
+    }
+    @media(max-width: 1438px){
+      width: 600px;
+      background-position: -773px -193px;
+    }
+    @media(max-width: 1250px){
+    display: none;
+  }
   }
   &__panel{
     position: relative;
-    right: 232px;
-    top: 35px;
-    //width: 50%;
+    left: 25%;
+    top: 60%;
+    transform: translate(-50%,-50%);
+    transition: .1s;
+    @media(max-width: 1250px){
+      position: absolute;
+      left: 50%;
+      top: 30%;
+
+    }
+
+
+
 
     .panel__top{
       width: 100%;
       text-align: center;
       margin-top: 85px;
       height: 165px;
+      @media(max-width: 1250px){
+        font-size: 18px;
+
+      }
       &--heading{
-        font-size: 2rem;
+        font-size: 2em;
         color: $primaryBlack;
         font-weight: normal;
+
       }
       &--decoration{
         width: 253px;
@@ -59,7 +87,7 @@
           text-transform: uppercase;
           color: $primaryBlack;
           font-weight: lighter;
-          font-size: 2rem;
+          font-size: 2em;
         }
       }
       &-button:nth-of-type(2){
