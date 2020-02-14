@@ -1,75 +1,88 @@
-.simple-steps-section{
+.simple-steps-section {
   display: flex;
   flex-direction: column;
   text-align: center;
   margin-top: 55px;
-  &__box{
+
+  &__box {
 
   }
-  &__box--heading{
+
+  &__box--heading {
     margin-bottom: 34px;
-    &-title{
+
+    &-title {
       font-size: 2rem;
       letter-spacing: -0.76px;
       color: $primaryBlack;
     }
-    .decoration{
+
+    .decoration {
       width: 253px;
       height: 33px;
       background: url("../assets/Decoration.svg");
       margin: 0 auto;
     }
   }
-  &__box--steps{
+
+  &__box--steps {
     display: flex;
     justify-content: center;
     background-color: $primaryLightGray;
-    padding: 73px 0 62px 0 ;
+    padding: 73px 0 62px 0;
 
-    &-container{
+    &-container {
       display: flex;
       flex-direction: row;
       width: 70%;
       justify-content: space-between;
-      .step{
+
+      .step {
         width: 20%;
         color: $primaryBlack;
-        &__title{
+
+        &__title {
           font-size: 1.1rem;
           position: relative;
-          &::after{
+
+          &::after {
             position: absolute;
             content: '';
             display: block;
-            height: 1px ;
+            height: 1px;
             width: 70px;
             border-bottom: 1px solid $primaryDarkGray;
             left: 50%;
-           bottom: -10px;
-            transform: translate(-50%,-50%);
+            bottom: -10px;
+            transform: translate(-50%, -50%);
           }
 
-      }
-        &__text{
-          margin-top: 21px ;
+        }
+
+        &__text {
+          margin-top: 21px;
         }
       }
-      .step-find{
+
+      .step-find {
         position: relative;
         bottom: 8px;
       }
     }
 
   }
-  &__box--button{
+
+  &__box--button {
     margin-top: 35px;
     margin-bottom: 80px;
-    .steps-btn{
+
+    .steps-btn {
       background-color: transparent;
       border: 1px solid $primaryDarkGray;
       width: 280px;
       height: 100px;
-      &__link{
+
+      &__link {
         text-decoration: none;
         text-transform: uppercase;
         color: $primaryBlack;
