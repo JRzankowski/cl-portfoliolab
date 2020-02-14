@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import HomeHeader from "./HomeHeader/HomeHeader";
 import HomeMainSection from "./HomeMainSection";
 import Columns from "./columnsSection";
+import SimpleStepsSection from "./simpleStepsSection";
+import AboutUsSection from "./aboutUsSection";
 
 export default class Home extends Component {
     render() {
@@ -11,6 +13,8 @@ export default class Home extends Component {
                 <HomeHeader/>
                 <HomeMainSection/>
                 <Columns/>
+                <SimpleStepsSection/>
+                <AboutUsSection/>
 
             </div>
         );
