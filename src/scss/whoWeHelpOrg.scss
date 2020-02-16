@@ -1,0 +1,53 @@
+.who-we-help-organization {
+  .who-we-help__container {
+    width: 100%;
+    text-align: left;
+    margin-top: 66px;
+
+    .who-we-help__table {
+      position: relative;
+      color: $primaryBlack;
+      line-height: .5;
+      padding: 20px 0;
+      display: none;
+
+      .who-we-help-table__title {
+        font-size: 1.4rem;
+      }
+      .who-we-help-table__mission {
+        font-size: 1rem;
+      }
+      .who-we-help-table__stuff {
+
+        position: absolute;
+        right: 0;
+        top: 50px;
+      }
+    }
+    .who-we-help__table.page-active{
+      display: block;
+    }
+
+    .who-we-help__table.page-active:nth-of-type(2) {
+      border-top: 1px solid #808080;
+      border-bottom: 1px solid #808080;
+    }
+  }
+  .who-we-help__pagination{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 80px;
+    &--page{
+      padding: 13px 15px;
+      margin-right: 5px;
+      cursor:pointer;
+      border: 1px solid transparent;
+    }
+    &--page.page-active{
+      border: 1px solid $primaryBlack;
+    }
+  }
+
+}

@@ -1,8 +1,46 @@
 import React, {Component} from 'react';
+import WhoWeHelpOrg from "./whoWeHelpOrg";
 
 
 export default class WhoWeHelp extends Component {
+
+    state={
+      select : 'foundations'
+    };
+
+    handleClick = (e) => {
+        e.target.classList.add('option-active');
+
+
+        if(e.target.classList.contains('option-first')){
+            e.target.nextElementSibling.classList.remove('option-active');
+            e.target.nextElementSibling.nextElementSibling.classList.remove('option-active');
+            this.setState({
+                select : 'foundations'
+            });
+        }
+        if(e.target.classList.contains('option-second')){
+            e.target.nextElementSibling.classList.remove('option-active');
+            e.target.previousElementSibling.classList.remove('option-active');
+            this.setState({
+                select : 'organizations'
+            });
+        }
+        if(e.target.classList.contains('option-third')){
+            e.target.previousElementSibling.classList.remove('option-active');
+            e.target.previousElementSibling.previousElementSibling.classList.remove('option-active');
+            this.setState({
+                select : 'local'
+            });
+        }
+
+
+
+
+    };
+
     render() {
+
         return (
             <section className='who-we-help'>
                 <div className="who-we-help__container">
@@ -10,15 +48,12 @@ export default class WhoWeHelp extends Component {
                     <div className="decoration"/>
                     <div className="who-we-help__options">
                         <div className="who-we-help__options-container">
-                            <div className="option option-active"><p className='option__text'> Fundacjom</p></div>
-                            <div className="option"><p className='option__text'> Organizacją<br/>pozarządowym</p></div>
-                            <div className="option"><p className='option__text'> Lokalnym <br/>zbiórkom</p></div>
+                            <div onClick={this.handleClick} className="option option-first option-active">Fundacjom</div>
+                            <div onClick={this.handleClick} className="option option-second">Organizacją<br/>pozarządowym</div>
+                            <div onClick={this.handleClick} className="option option-third">Lokalnym <br/>zbiórkom</div>
                         </div>
                     </div>
-                    <p className='who-we-help__text'>
-                        W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z <br/> którymi współpracujemy. Możesz
-                        sprawdzić czym się zajmują, <br/> komu pomagają i czego potrzebują.
-                    </p>
+                    <WhoWeHelpOrg select={this.state.select}/>
                 </div>
             </section>
         )

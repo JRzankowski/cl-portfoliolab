@@ -1,0 +1,120 @@
+
+  {
+    "foundations": [
+
+      {
+        "page": "page-1",
+        "name": "Dbam o Zdrowie",
+        "mission": "Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
+        "stuff": "ubrania, jedzenie, sprzęt AGD, meble, zabawki"
+      },
+      {
+        "page": "page-1",
+        "name": "Dla dzieci",
+        "mission": "Pomoc dzieciom z ubogich rodzin.",
+        "stuff": "ubrania, meble, zabawki"
+      },
+      {
+        "page": "page-1",
+        "name": "Bez domu",
+        "mission": "Pomoc dla osób nie posiadających miejsca zamieszkania.",
+        "stuff": "ubrania, jedzenie, ciepłe koce"
+      },
+      {
+        "page": "page-2",
+        "name": "Dbam o Zdrowiev1",
+        "mission": "Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
+        "stuff": "ubrania, jedzenie, sprzęt AGD, meble, zabawki"
+      },
+      {
+        "page": "page-2",
+        "name": "Dla dzieciv1",
+        "mission": "Pomoc dzieciom z ubogich rodzin.",
+        "stuff": "ubrania, meble, zabawki"
+      },
+      {
+        "page": "page-2",
+        "name": "Bez domuv1",
+        "mission": "Pomoc dla osób nie posiadających miejsca zamieszkania.",
+        "stuff": "ubrania, jedzenie, ciepłe koce"
+      },
+      {
+        "page": "page-3",
+        "name": "Dbam o Zdrowiev2",
+        "mission": "Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
+        "stuff": "ubrania, jedzenie, sprzęt AGD, meble, zabawki"
+      },
+      {
+        "page": "page-3",
+        "name": "Dla dzieciv2",
+        "mission": "Pomoc dzieciom z ubogich rodzin.",
+        "stuff": "ubrania, meble, zabawki"
+      },
+      {
+        "page": "page-3",
+        "name": "Bez domuv2",
+        "mission": "Pomoc dla osób nie posiadających miejsca zamieszkania.",
+        "stuff": "ubrania, jedzenie, ciepłe koce"
+      }
+
+    ],
+    "organizations": [
+      {
+        "page": "page-1",
+        "name": "Lorem Ipsum 1",
+        "mission": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+        "stuff": "Egestas, sed, tempus"
+      },
+      {
+        "page": "page-1",
+        "name": "Lorem Ipsum 2",
+        "mission": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
+        "stuff": "Ut, aliquam, purus, sit, amet"
+      },
+      {
+        "page": "page-1",
+        "name": "Lorem Ipsum 3",
+        "mission": "Scelerisque in dictum non consectetur a erat nam.",
+        "stuff": "Mi, quis, hendrerit, dolor"
+      },
+      {
+        "page": "page-2",
+        "name": "Lorem Ipsum 4",
+        "mission": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+        "stuff": "Egestas, sed, tempus"
+      },
+      {
+        "page": "page-2",
+        "name": "Lorem Ipsum 5",
+        "mission": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
+        "stuff": "Ut, aliquam, purus, sit, amet"
+      },
+      {
+        "page": "page-2",
+        "name": "Lorem Ipsum 6",
+        "mission": "Scelerisque in dictum non consectetur a erat nam.",
+        "stuff": "Mi, quis, hendrerit, dolor"
+      }
+
+    ],
+    "local": [
+      {
+        "page": "page-1",
+        "name": "Lorem Ipsum 4",
+        "mission": "Scelerisque in dictum non consectetur a erat nam.",
+        "stuff": "Egestas, sed, tempus"
+      },
+      {
+        "page": "page-1",
+        "name": "Lorem Ipsum 5",
+        "mission": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
+        "stuff": "Ut, aliquam, purus, sit, amet"
+      },
+      {
+        "page": "page-1",
+        "name": "Lorem Ipsum 36",
+        "mission": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
+        "stuff": "Mi, quis, hendrerit, dolor"
+      }
+    ]
+  }
