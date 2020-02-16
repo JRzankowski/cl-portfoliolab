@@ -5,7 +5,7 @@ export default class Columns extends Component {
 
     render() {
         return (
-            <div className='column-section'>
+            <div name='columns' className='column-section'>
                 <div className="column-section__container">
                     <div className="column column-1">
                         <p className='column__number'>

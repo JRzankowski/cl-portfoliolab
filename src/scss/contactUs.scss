@@ -1,0 +1,124 @@
+.contact {
+  display: flex;
+  margin-top: 100px;
+  height: 100vh;
+
+
+  &__img {
+    width: 70%;
+    background: url("../assets/Background-Contact-Form.jpg");
+    background-size: cover;
+    opacity: .2;
+
+  }
+
+  &__form {
+    text-align: center;
+    padding: 200px 20px;
+    width: 550px;
+    position: relative;
+
+    &--container {
+      position: absolute;
+      left: 30%;
+      top: 33%;
+      transform: translate(-50%, -50%);
+    }
+
+
+    &-heading {
+      font-size: 2rem;
+      letter-spacing: -0.76px;
+      color: $primaryBlack;
+    }
+
+    .decoration {
+      width: 253px;
+      height: 33px;
+      background: url("../assets/Decoration.svg");
+      margin: 0 auto 60px;
+
+    }
+
+    .form {
+      text-align: left;
+
+      .form__inputs {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        &--label {
+          width: 256px;
+          font-size: 1rem;
+          font-weight: bolder;
+
+          .form__inputs--input {
+            width: 256px;
+            border: none;
+            border-bottom: 1px solid #7f7f7f;
+            user-select: none;
+            outline: none;
+            margin-top: 12px;
+            padding: 4px 0;
+          }
+
+          .form__inputs--input:focus {
+            border-bottom: 1px solid $primaryBlack;
+          }
+
+          .form__inputs--input::placeholder {
+            color: #3C3C3C26;
+          }
+        }
+
+        &--label:nth-of-type(2) {
+          margin-left: 15px;
+
+        }
+      }
+
+      &__text-area-label {
+        width: 256px;
+        text-align: left;
+        font-size: 1rem;
+        font-weight: bolder;
+
+
+        .form__text-area {
+          width: 100%;
+          border: none;
+          border-bottom: 1px solid #7f7f7f;
+          user-select: none;
+          outline: none;
+          padding-top: 10px;
+          resize: none;
+        }
+
+        .form__text-area::placeholder {
+          color: #3C3C3C26;
+        }
+
+      }
+
+      .form__submit {
+        position: absolute;
+        bottom: -110px;
+        right: -75px;
+        transform: translate(-50%, -50%);
+        padding: 13px 52px;
+        background-color: transparent;
+        border: 1px solid $primaryDarkGray;
+        cursor: pointer;
+        transition: .1s;
+
+      }
+
+      .form__submit:hover {
+        border-color: $primaryBlack;
+      }
+
+    }
+
+  }
+}

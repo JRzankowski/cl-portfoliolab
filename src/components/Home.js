@@ -5,6 +5,7 @@ import Columns from "./columnsSection";
 import SimpleStepsSection from "./simpleStepsSection";
 import AboutUsSection from "./aboutUsSection";
 import WhoWeHelp from "./whoWeHelpSection";
+import ContactUs from "./contactUsSection";
 
 export default class Home extends Component {
     render() {
@@ -17,6 +18,7 @@ export default class Home extends Component {
                 <SimpleStepsSection/>
                 <AboutUsSection/>
                 <WhoWeHelp/>
+                <ContactUs/>
             </div>
         );
     }

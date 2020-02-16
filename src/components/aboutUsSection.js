@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 export default class AboutUsSection extends Component {
     render() {
         return (
-            <section className="about-us">
+            <section name='aboutUs' className="about-us">
                 <div className="about-us__content">
                     <div className="content-container">
                         <h2 className='about-us__content--heading'>O nas</h2>

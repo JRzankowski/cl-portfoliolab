@@ -42,7 +42,7 @@ export default class WhoWeHelp extends Component {
     render() {
 
         return (
-            <section className='who-we-help'>
+            <section name='whoWeHelp' className='who-we-help'>
                 <div className="who-we-help__container">
                     <h2 className="who-we-help__heading">Komu pomagamy ?</h2>
                     <div className="decoration"/>
