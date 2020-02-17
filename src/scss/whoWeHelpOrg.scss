@@ -14,9 +14,11 @@
       .who-we-help-table__title {
         font-size: 1.4rem;
       }
+
       .who-we-help-table__mission {
         font-size: 1rem;
       }
+
       .who-we-help-table__stuff {
 
         position: absolute;
@@ -24,28 +26,33 @@
         top: 50px;
       }
     }
-    .who-we-help__table.page-active{
+
+    .who-we-help__table.page-active {
       display: block;
     }
 
-    .who-we-help__table.page-active:nth-of-type(2) {
+    .who-we-help__table.page-active:nth-of-type(3n-1) {
       border-top: 1px solid #808080;
       border-bottom: 1px solid #808080;
     }
+
   }
-  .who-we-help__pagination{
+
+  .who-we-help__pagination {
     display: flex;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 80px;
-    &--page{
+
+    &--page {
       padding: 13px 15px;
       margin-right: 5px;
-      cursor:pointer;
+      cursor: pointer;
       border: 1px solid transparent;
     }
-    &--page.page-active{
+
+    &--page.page-active {
       border: 1px solid $primaryBlack;
     }
   }

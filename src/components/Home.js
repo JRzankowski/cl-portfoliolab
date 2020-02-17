@@ -7,6 +7,7 @@ import AboutUsSection from "./aboutUsSection";
 import WhoWeHelp from "./whoWeHelpSection";
 import ContactUs from "./contactUsSection";
 
+
 export default class Home extends Component {
     render() {
         return (
@@ -19,6 +20,7 @@ export default class Home extends Component {
                 <AboutUsSection/>
                 <WhoWeHelp/>
                 <ContactUs/>
+
             </div>
         );
     }
