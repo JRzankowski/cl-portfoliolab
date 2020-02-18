@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 
-
 export default class Columns extends Component {
 
     render() {
@@ -15,7 +14,8 @@ export default class Columns extends Component {
                             oddanych worków
                         </p>
                         <p className='column__text'>
-                            Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.
+                            Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra
+                            elementuma. Aliquam erat volutpat.
                         </p>
                     </div>
                     <div className="column column-2">
@@ -26,7 +26,8 @@ export default class Columns extends Component {
                             wspartych organizacji
                         </p>
                         <p className='column__text'>
-                            Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.
+                            Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra
+                            elementuma. Aliquam erat volutpat.
                         </p>
                     </div>
                     <div className="column column-3">
@@ -37,11 +38,11 @@ export default class Columns extends Component {
                             zorganizowanych zbiórek
                         </p>
                         <p className='column__text'>
-                            Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.
+                            Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra
+                            elementuma. Aliquam erat volutpat.
                         </p>
                     </div>
                 </div>
-
             </div>
         );
     }

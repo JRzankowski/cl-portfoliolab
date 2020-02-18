@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 
 export default class Login extends Component {
 
-
     handleInput = e => {
         let regex = null;
         const input_regex = {
@@ -38,7 +37,6 @@ export default class Login extends Component {
     };
 
     render() {
-
         return (
             <section className='login'>
                 <HomeHeader/>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch,withRouter} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./components/Home";
 import './scss/main.scss'
 import Login from "./components/loginSection";
@@ -10,10 +10,9 @@ export default function App() {
         <div className="App">
             <Router>
                 <Switch>
-                    <Route exact path="/" component={withRouter(Home)}/>
-                    <Route path="/login" component={withRouter(Login)}/>
-                    <Route path="/register" component={withRouter(Register)}/>
-
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/login" component={Login}/>
+                    <Route path="/register" component={Register}/>
                 </Switch>
             </Router>
         </div>

@@ -17,7 +17,6 @@ export default class AboutUsSection extends Component {
                     </div>
                 </div>
                 <div className="about-us__img"/>
-
             </section>
         );
     }

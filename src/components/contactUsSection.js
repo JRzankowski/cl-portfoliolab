@@ -3,13 +3,11 @@ import Footer from "./Footer";
 
 export default class ContactUs extends Component {
 
-
     state = {
         name: '',
         email: '',
         message: '',
     };
-
     handleInput = e => {
         let regex = null;
         const input_regex = {
@@ -51,9 +49,7 @@ export default class ContactUs extends Component {
         if (e.target.value.length === 0) {
             e.target.classList.remove('valid', 'invalid');
         }
-
     };
-
     handleSubmit = e => {
         e.preventDefault();
         const url = `https://fer-api.coderslab.pl/v1/portfolio/contact`;
@@ -70,13 +66,12 @@ export default class ContactUs extends Component {
                     if (response.status === 'success') {
                         document.querySelector('.contact__form-message.error').classList.remove('active');
                         document.querySelector('.contact__form-message.success').classList.add('active')
-                        for(let el of document.querySelectorAll('.input-validation')){
+                        for (let el of document.querySelectorAll('.input-validation')) {
                             el.value = "";
                         }
                     } else {
                         document.querySelector('.contact__form-message.success').classList.remove('active');
                         document.querySelector('.contact__form-message.error').classList.add('active');
-
                     }
                 }
             )
@@ -98,7 +93,8 @@ export default class ContactUs extends Component {
                                 <div className="form__inputs">
                                     <label className='form__inputs--label' htmlFor="name">Wpisz swoje imię:
                                         <input onInput={this.handleInput} placeholder='Krzysztof'
-                                               className='form__inputs--input name input-validation' type="text" id="name"
+                                               className='form__inputs--input name input-validation' type="text"
+                                               id="name"
                                                name="name"/>
                                         <p>Podane imię jest nieprawidłowe !</p>
                                     </label>
@@ -111,7 +107,8 @@ export default class ContactUs extends Component {
                                     </label>
                                 </div>
                                 <label className='form__text-area-label' htmlFor="message">Wpisz swoją wiadomość:
-                                    <textarea onInput={this.handleInput} className='form__text-area text-area input-validation'
+                                    <textarea onInput={this.handleInput}
+                                              className='form__text-area text-area input-validation'
                                               id="message"
                                               rows="4"
                                               cols="50"
@@ -125,9 +122,7 @@ export default class ContactUs extends Component {
                     </div>
                     <Footer/>
                 </section>
-
             </>
-
         );
     }
 }

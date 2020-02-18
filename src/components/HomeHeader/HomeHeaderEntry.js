@@ -3,7 +3,6 @@ import React, {Component} from "react";
 
 import Login from "../loginSection";
 
-
 export default class HomeHeaderEntry extends Component {
     render() {
         return (
@@ -19,6 +18,4 @@ export default class HomeHeaderEntry extends Component {
             </div>
         )
     }
-
-
 }

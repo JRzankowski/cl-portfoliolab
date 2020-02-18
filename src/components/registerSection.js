@@ -51,7 +51,6 @@ export default class Register extends Component {
             if (regex.test(e.target.value)) {
                 e.target.classList.remove('invalid');
                 e.target.classList.add('valid')
-
             } else {
                 e.target.classList.remove('valid');
                 e.target.classList.add('invalid');
@@ -63,7 +62,6 @@ export default class Register extends Component {
     };
 
     render() {
-
         return (
             <section className='register'>
                 <HomeHeader/>

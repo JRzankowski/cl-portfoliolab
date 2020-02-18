@@ -1,46 +1,37 @@
 import React, {Component} from 'react';
 import WhoWeHelpOrg from "./whoWeHelpOrg";
 
-
 export default class WhoWeHelp extends Component {
 
-    state={
-      select : 'foundations'
+    state = {
+        select: 'foundations'
     };
-
     handleClick = (e) => {
         e.target.classList.add('option-active');
-
-
-        if(e.target.classList.contains('option-first')){
+        if (e.target.classList.contains('option-first')) {
             e.target.nextElementSibling.classList.remove('option-active');
             e.target.nextElementSibling.nextElementSibling.classList.remove('option-active');
             this.setState({
-                select : 'foundations'
+                select: 'foundations'
             });
         }
-        if(e.target.classList.contains('option-second')){
+        if (e.target.classList.contains('option-second')) {
             e.target.nextElementSibling.classList.remove('option-active');
             e.target.previousElementSibling.classList.remove('option-active');
             this.setState({
-                select : 'organizations'
+                select: 'organizations'
             });
         }
-        if(e.target.classList.contains('option-third')){
+        if (e.target.classList.contains('option-third')) {
             e.target.previousElementSibling.classList.remove('option-active');
             e.target.previousElementSibling.previousElementSibling.classList.remove('option-active');
             this.setState({
-                select : 'local'
+                select: 'local'
             });
         }
-
-
-
-
     };
 
     render() {
-
         return (
             <section name='whoWeHelp' className='who-we-help'>
                 <div className="who-we-help__container">
@@ -48,8 +39,10 @@ export default class WhoWeHelp extends Component {
                     <div className="decoration"/>
                     <div className="who-we-help__options">
                         <div className="who-we-help__options-container">
-                            <div onClick={this.handleClick} className="option option-first option-active">Fundacjom</div>
-                            <div onClick={this.handleClick} className="option option-second">Organizacją<br/>pozarządowym</div>
+                            <div onClick={this.handleClick} className="option option-first option-active">Fundacjom
+                            </div>
+                            <div onClick={this.handleClick} className="option option-second">Organizacją<br/>pozarządowym
+                            </div>
                             <div onClick={this.handleClick} className="option option-third">Lokalnym <br/>zbiórkom</div>
                         </div>
                     </div>
