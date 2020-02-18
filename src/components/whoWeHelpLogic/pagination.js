@@ -1,7 +1,7 @@
 import content from "./content";
 import data from "../data";
 
-const pagination = function (select) {
+ const pagination = function (select) {
     if (select) {
         let page1 = document.querySelectorAll('.who-we-help__table.page-1');
         let page2 = document.querySelectorAll('.who-we-help__table.page-2');
