@@ -10,6 +10,15 @@
     display: flex;
     flex-direction: column;
     width: 385px;
+    animation: fadeIn .2s linear both 1;
+    opacity: 0;
+
+    @keyframes fadeIn {
+      100%{
+        opacity: 1;
+      }
+
+    }
 
     &__top {
       text-align: center;
@@ -68,11 +77,11 @@
         opacity: 0;
         position: absolute;
         left: 0;
-        bottom: -30px;
+        bottom: 0;
         transition: .1s;
       }
 
-      &--input + p {
+      &--input.invalid + p {
         opacity: 1;
       }
 
