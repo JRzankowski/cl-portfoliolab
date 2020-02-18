@@ -7,11 +7,9 @@ import AboutUsSection from "./aboutUsSection";
 import WhoWeHelp from "./whoWeHelpSection";
 import ContactUs from "./contactUsSection";
 
-
 export default class Home extends Component {
     render() {
         return (
-
             <div className="container">
                 <HomeHeader/>
                 <HomeMainSection/>
@@ -20,8 +18,7 @@ export default class Home extends Component {
                 <AboutUsSection/>
                 <WhoWeHelp/>
                 <ContactUs/>
-
             </div>
-        );
+        )
     }
 }
