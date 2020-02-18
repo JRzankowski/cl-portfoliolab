@@ -54,6 +54,7 @@
           width: 256px;
           font-size: 1rem;
           font-weight: bolder;
+          position: relative;
 
           .form__inputs--input {
             width: 256px;
@@ -65,9 +66,31 @@
             padding: 4px 0;
           }
 
-          .form__inputs--input:focus {
-            border-bottom: 1px solid $primaryBlack;
+          .form__inputs--input.valid {
+            border-color: #36cc36
           }
+
+          .form__inputs--input.invalid {
+            border-color: red
+          }
+
+          .form__inputs--input + p {
+            font-size: 0.9em;
+            font-weight: bold;
+            text-align: center;
+            color: red;
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            bottom: -42px;
+            transition: .1s;
+          }
+
+          .form__inputs--input.invalid + p {
+            opacity: 1;
+
+          }
+
 
           .form__inputs--input::placeholder {
             color: #3C3C3C26;
@@ -85,6 +108,7 @@
         text-align: left;
         font-size: 1rem;
         font-weight: bolder;
+        position: relative;
 
 
         .form__text-area {
@@ -95,10 +119,37 @@
           outline: none;
           padding-top: 10px;
           resize: none;
+          line-height: 1.6;
+
+        }
+
+        .form__text-area.valid {
+          border-color: #36cc36
+        }
+
+        .form__text-area.invalid {
+          border-color: red
+        }
+
+        .form__text-area + p {
+          font-size: 0.9em;
+          font-weight: bold;
+          text-align: center;
+          color: red;
+          opacity: 0;
+          position: absolute;
+          left: 0;
+          bottom: -42px;
+          transition: .1s;
+        }
+
+        .form__text-area.invalid + p {
+          opacity: 1;
         }
 
         .form__text-area::placeholder {
           color: #3C3C3C26;
+
         }
 
       }
