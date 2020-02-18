@@ -42,6 +42,30 @@
 
     }
 
+    &-message.success,
+    &-message.error {
+      position: absolute;
+      left: 50%;
+      top: 129px;
+      transform: translate(-50%, -50%);
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      color: green;
+      opacity: 0;
+      transition: .1s;
+    }
+
+    &-message.error {
+      color: red;
+    }
+
+    &-message.success.active,
+    &-message.error.active {
+      opacity: 1;
+    }
+
+
     .form {
       text-align: left;
 
@@ -75,14 +99,14 @@
           }
 
           .form__inputs--input + p {
-            font-size: 0.9em;
+            font-size: 0.8em;
             font-weight: bold;
             text-align: center;
             color: red;
             opacity: 0;
             position: absolute;
             left: 0;
-            bottom: -42px;
+            bottom: -30px;
             transition: .1s;
           }
 
@@ -132,14 +156,14 @@
         }
 
         .form__text-area + p {
-          font-size: 0.9em;
+          font-size: 0.8em;
           font-weight: bold;
           text-align: center;
           color: red;
           opacity: 0;
           position: absolute;
           left: 0;
-          bottom: -42px;
+          bottom: -30px;
           transition: .1s;
         }
 
