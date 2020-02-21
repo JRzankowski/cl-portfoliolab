@@ -19,6 +19,9 @@
     list-style: none;
 
     &--login,
+    &--stuff,
+    &--user-email,
+    &--log-out,
     &--register {
       .entry-link {
         text-decoration: none;
@@ -29,14 +32,31 @@
       }
     }
 
-    &--login {
+    &--login,
+    &--user-email,
+    &--stuff{
       margin-right: 20px;
     }
 
-    &--register {
+    &--register,
+    &--stuff{
       border: 1px solid $primaryYellow;
 
     }
+    &--stuff{
+      font-weight: bolder;
+      .entry-link{
+        color: $primaryBlack ;
+      }
+    }
+    &--user-email{
+      .entry-link {
+        color: $primaryBlack;
+      }
+    }
+
+
+
   }
 
   &__panel--nav {

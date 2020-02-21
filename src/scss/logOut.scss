@@ -1,0 +1,25 @@
+.log-out {
+  &__container {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  &__heading{
+    font-weight: normal;
+    font-size: 2rem;
+  }
+  .decoration {
+    width: 253px;
+    height: 33px;
+    background: url("../assets/Decoration.svg");
+    margin: 0 auto 50px;
+  }
+  &__main-page{
+    border: 1px solid $primaryDarkGray;
+    padding: 13px 18px;
+    text-decoration: none;
+    color: $primaryBlack;
+  }
+}

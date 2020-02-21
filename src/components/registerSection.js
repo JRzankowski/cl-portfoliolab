@@ -4,8 +4,15 @@ import {Link} from "react-router-dom";
 
 export default class Register extends Component {
     state = {
-        passwordCheck: false
+        passwordCheck: false,
+        entryActive: true
+
     };
+    componentWillUnmount() {
+        this.setState({
+            entryActive: false
+        })
+    }
     handleInput = e => {
         let regex = null;
         const input_regex = {
@@ -64,7 +71,7 @@ export default class Register extends Component {
     render() {
         return (
             <section className='register'>
-                <HomeHeader/>
+                <HomeHeader entryActive={this.state.entryActive}/>
                 <div className="register-box">
                     <div className="register-box__top">
                         <h2 className="register-box__top--heading">Zaloguj się</h2>

@@ -1,0 +1,118 @@
+.give-stuff-step {
+  position: relative;
+  top: -43px;
+  height: 90vh;
+  padding: 36px 142px;
+  background: url("../assets/giveStuff-step-background.jpg") no-repeat;
+  background-size: cover;
+  width: 100%;
+
+  &__box {
+    &--current-step {
+      font-size: 1.2rem;
+      color: $primaryDarkGray;
+    }
+
+    &--inputs {
+      display: flex;
+      flex-direction: column;
+
+      .box__heading {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+      }
+
+      .box__input-container {
+        display: flex;
+        margin-bottom: 40px;
+
+        .box__input {
+          display: none;
+
+        }
+
+        .label-text:before {
+          display: inline-block;
+          vertical-align: middle;
+          width: 30px;
+          height: 30px;
+          background: transparent;
+          border: 1px solid $primaryDarkGray;
+          color: #ecf0f1;
+          content: '';
+          cursor: pointer;
+          margin: -2px 23px 0 0
+        }
+
+        .box__input:checked + .label-text:before {
+          background: $primaryYellow;
+          text-align: center;
+          line-height: 1em;
+        }
+
+        .label-text {
+          color: $primaryBlack;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &--next-btn {
+      cursor: pointer;
+      margin-top: 110px;
+      background-color: transparent;
+      border: 1px solid $primaryDarkGray;
+      padding: 23px 63px;
+      transition: .2s;
+      font-size: 1.1rem;
+    }
+
+    &--next-btn:hover {
+      background-color: #F0F1F1;
+    }
+  }
+}
+
+.give-stuff-step-2 {
+  .box__input--select {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 30px;
+    padding: 8px 140px 8px 18px;
+    border: 1px solid $primaryDarkGray;
+    background-image: url("../assets/Icon-Arrow-Up.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    font-weight: lighter;
+    transition: .2s;
+    width: 255px;
+    margin-bottom: 400px;
+
+    .box__input--options {
+      text-align: center;
+      z-index: 55;
+      position: absolute;
+      right: 0;
+      top: 50px;
+      width: 60px;
+      border: 1px solid $primaryDarkGray;
+      opacity: 0;
+      transition: .1s;
+
+      .box__input--option {
+        padding: 5px 0;
+
+      }
+      .box__input--option:hover {
+        background-color: #afafaf;
+      }
+    }
+    &:hover{
+      background-image: url("../assets/Icon-Arrow-Down.svg");
+    }
+    &:hover .box__input--options {
+      opacity: 1;
+    }
+  }
+}

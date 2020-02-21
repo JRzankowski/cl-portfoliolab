@@ -4,6 +4,19 @@ import {Link} from "react-router-dom";
 
 export default class Login extends Component {
 
+    state = {
+        entryActive: true,
+        email: '',
+        password: '',
+    };
+
+    componentWillUnmount() {
+        this.setState({
+            entryActive: false
+        })
+    }
+
+
     handleInput = e => {
         let regex = null;
         const input_regex = {
@@ -16,19 +29,31 @@ export default class Login extends Component {
             if ((e.target.value.length) > 6) {
                 e.target.classList.remove('invalid');
                 e.target.classList.add('valid')
+                this.setState({
+                    password: e.target.value
+                })
             } else {
                 e.target.classList.remove('valid');
                 e.target.classList.add('invalid');
+                this.setState({
+                    password: ""
+                })
             }
         }
         if (regex) {
             if (regex.test(e.target.value)) {
                 e.target.classList.remove('invalid');
                 e.target.classList.add('valid')
+                this.setState({
+                    email: e.target.value
+                })
 
             } else {
                 e.target.classList.remove('valid');
                 e.target.classList.add('invalid');
+                this.setState({
+                    email: ""
+                })
             }
         }
         if (e.target.value.length === 0) {
@@ -36,10 +61,12 @@ export default class Login extends Component {
         }
     };
 
+
+
     render() {
         return (
             <section className='login'>
-                <HomeHeader/>
+                <HomeHeader entryActive={this.state.entryActive}/>
                 <div className="log-in-box">
                     <div className="log-in-box__top">
                         <h2 className="log-in-box__top--heading">Zaloguj się</h2>
@@ -58,7 +85,8 @@ export default class Login extends Component {
                         </label>
                     </div>
                     <Link className='log-in-box__button' to='/register'>Załóż konto</Link>
-                    <Link className='log-in-box__button' to='/register' type='submit'>Zaloguj się</Link>
+                    <Link className='log-in-box__button' to='/logged in' type='submit' onClick={this.logIn}>Zaloguj
+                        się</Link>
                 </div>
             </section>
         )

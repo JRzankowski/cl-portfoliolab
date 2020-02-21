@@ -1,0 +1,141 @@
+.give-stuff {
+  display: flex;
+  position: relative;
+  z-index: 4;
+  overflow: visible;
+  height: 70vh;
+  flex-wrap: wrap;
+  animation: fade_in .2s linear both;
+  opacity: 0;
+  @keyframes fade_in {
+    100% {
+      opacity: 1;
+    }
+    
+  }
+  @media(max-width: 1250px) {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    position: relative;
+    top: -170px;
+    z-index: 7;
+    background: url("../assets/giveStuff-hero-img.jpg") no-repeat;
+    background-size: cover;
+    height: 120%;
+    width: 900px;
+    left: -90px;
+
+    transition: .1s;
+    @media (max-width: 1650px) {
+      //width: 700px;
+      right: 0px;
+      //background-position: -598px -193px;
+    }
+    @media(max-width: 1438px) {
+      //width: 600px;
+      //background-position: -773px -193px;
+    }
+    @media(max-width: 1250px) {
+      display: none;
+    }
+  }
+
+  &__main {
+    z-index: 9;
+    position: relative;
+    left: 9%;
+    top: 64%;
+    transform: translate(-50%, -50%);
+    transition: .1s;
+    text-align: center;
+
+    @media(max-width: 1250px) {
+      position: absolute;
+      left: 50%;
+      top: 30%;
+
+    }
+
+    .main__heading {
+      font-size: 2rem;
+      color: $primaryBlack;
+      font-weight: normal;
+      line-height: 1.5;
+    }
+
+    .decoration {
+      width: 253px;
+      height: 33px;
+      background: url("../assets/Decoration.svg");
+      margin: 0 auto;
+
+    }
+
+    .main__text {
+      font-size: 1.8rem;
+      font-weight: lighter;
+      color: $primaryBlack;
+      margin-bottom: 70px;
+    }
+
+    .main__steps {
+      display: flex;
+
+      &--step {
+        position: relative;
+        border: 0.75px solid #3C3C3C;
+        width: 120px;
+        height: 120px;
+        transform: rotate(45deg);
+        margin-right: 30px;
+
+        .step-container {
+          position: absolute;
+          left: 43%;
+          top: 43%;
+          transform: translate(-50%, -50%) rotate(-45deg);
+          width: 80%;
+
+          .step__number {
+            font-weight: lighter;
+            display: block;
+            font-size: 1.6rem;
+            color: $primaryBlack;
+          }
+
+          .step__description {
+            font-weight: lighter;
+            font-size: 1.1rem;
+            color: $primaryBlack;
+            margin-top: 30px;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.give-stuff__important {
+  z-index: 10;
+  position: relative;
+  top: -41px;
+  width: 100%;
+  background-color: $primaryYellow;
+  padding: 32px 100px 42px;
+
+  &-container {
+    line-height: .7;
+  }
+
+  &--heading {
+    font-size: 2rem;
+  }
+
+  &--text {
+    font-size: 1rem;
+  }
+}
