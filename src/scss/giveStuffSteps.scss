@@ -195,28 +195,33 @@
         width: 200px;
       }
     }
+
     .box__input-container:nth-of-type(3) {
       .label-text:before {
         content: "bezdomnym";
         width: 150px;
       }
     }
+
     .box__input-container:nth-of-type(4) {
       .label-text:before {
         content: "niepełnosprawnym";
         width: 200px;
       }
     }
+
     .box__input-container:nth-of-type(5) {
       .label-text:before {
         content: "osobom starszym";
         width: 200px;
       }
     }
+
     .box__input--text {
       .box__input {
         text-align: center;
       }
+
       .label-text:before {
         content: "dzieciom";
         display: block;
@@ -228,23 +233,59 @@
         font-size: 1.1rem;
         padding: 8px 2px;
       }
+
       .box__input:checked + .label-text:before {
       }
+
       .label-text {
         text-align: center;
       }
     }
   }
-  .box__input-container.optional-organization{
-    .box__input--text{
+
+  .box__input-container.optional-organization {
+    .box__input--text {
       font-size: 1.2rem;
-      .box__input{
+
+      .box__input {
         margin-top: 20px;
         display: block;
         width: 400px;
         padding: 4px 3px;
         font-size: 1rem;
         line-height: 1;
+      }
+    }
+  }
+}
+
+.give-stuff-step.give-stuff-step-4 {
+  .give-stuff-step__box--inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .box__heading{
+      width: 100%;
+    }
+    .box__input-container {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      .box__input__heading{
+        font-weight: bolder;
+        font-size: 1.2rem;
+      }
+      .box__input--text{
+        margin-bottom: 25px;
+        font-size: 1.1rem;
+      }
+      .box__input{
+        padding: 4px 3px;
+        margin-left: 34px;
+        display: inline-block;
+        background-color: transparent;
+        border: 1px solid $primaryDarkGray;
       }
     }
   }
