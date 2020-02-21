@@ -1,29 +1,36 @@
 import React, {Component} from 'react';
 
 
-export default class GiveStuffStep1 extends Component {
+export default class GiveStuffStep2 extends Component {
     state = {
         bags: '— wybierz —'
     };
-
-
     handleClick = (e) => {
-        if (this.state.choice) {
-            this.props.changeStep('step3', 'active')
+        if (e.target.classList.contains('give-stuff-step__box--next-btn')) {
+            if (this.state.bags) {
+                this.props.changeStep('step3')
+            }
+        } else if (e.target.classList.contains('give-stuff-step__box--previous-btn')) {
+            this.props.changeStep('step1')
         }
     };
-
-    handleOptionClick=(e)=>{
+    handleOptionClick = (e) => {
         this.setState({
-            bags : e.target.innerHTML
-        })
+            bags: e.target.innerHTML
+        }, () => {
+            this.props.setStepValue('step2Choice', this.state.bags)
+        });
     };
 
-
     render() {
-        console.log('co');
+        let activeClass = '';
+        if (this.props.isActive() === 'step2') {
+            activeClass = 'active'
+        } else {
+            activeClass = 'hidden'
+        }
         return (
-            <section className="give-stuff-step give-stuff-step-2">
+            <section className={`give-stuff-step give-stuff-step-2 ${activeClass}`}>
                 <div className="give-stuff-step__container">
                     <div className="give-stuff-step__box">
                         <p className="give-stuff-step__box--current-step">Krok 2/4</p>
@@ -34,11 +41,21 @@ export default class GiveStuffStep1 extends Component {
                                     <div className='box__input--select'>
                                         {this.state.bags}
                                         <div className="box__input--options">
-                                            <div data-value='1' onClick={this.handleOptionClick} className="box__input--option">1</div>
-                                            <div data-value='2' onClick={this.handleOptionClick} className="box__input--option">2</div>
-                                            <div data-value='3' onClick={this.handleOptionClick} className="box__input--option">3</div>
-                                            <div data-value='4' onClick={this.handleOptionClick} className="box__input--option">4</div>
-                                            <div data-value='5' onClick={this.handleOptionClick} className="box__input--option">5</div>
+                                            <div data-value='1' onClick={this.handleOptionClick}
+                                                 className="box__input--option">1
+                                            </div>
+                                            <div data-value='2' onClick={this.handleOptionClick}
+                                                 className="box__input--option">2
+                                            </div>
+                                            <div data-value='3' onClick={this.handleOptionClick}
+                                                 className="box__input--option">3
+                                            </div>
+                                            <div data-value='4' onClick={this.handleOptionClick}
+                                                 className="box__input--option">4
+                                            </div>
+                                            <div data-value='5' onClick={this.handleOptionClick}
+                                                 className="box__input--option">5
+                                            </div>
                                         </div>
 
                                     </div>
@@ -46,7 +63,8 @@ export default class GiveStuffStep1 extends Component {
                                 </label>
                             </div>
                         </div>
-                        <button onClick={this.handleClick} className="give-stuff-step__box--next-btn">Wstecz</button>
+                        <button onClick={this.handleClick} className="give-stuff-step__box--previous-btn">Wstecz
+                        </button>
                         <button onClick={this.handleClick} className="give-stuff-step__box--next-btn">Dalej</button>
                     </div>
                 </div>

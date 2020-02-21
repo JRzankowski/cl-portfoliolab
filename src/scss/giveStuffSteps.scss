@@ -6,6 +6,12 @@
   background: url("../assets/giveStuff-step-background.jpg") no-repeat;
   background-size: cover;
   width: 100%;
+  display: none;
+
+
+  &.active {
+    display: block;
+  }
 
   &__box {
     &--current-step {
@@ -57,14 +63,17 @@
       }
     }
 
-    &--next-btn {
+    &--next-btn,
+    &--previous-btn {
       cursor: pointer;
       margin-top: 110px;
+      width: 170px;
       background-color: transparent;
       border: 1px solid $primaryDarkGray;
-      padding: 23px 63px;
+      padding: 23px 32px;
       transition: .2s;
       font-size: 1.1rem;
+      margin-left: 20px;
     }
 
     &--next-btn:hover {
@@ -87,7 +96,7 @@
     font-weight: lighter;
     transition: .2s;
     width: 255px;
-    margin-bottom: 400px;
+    margin-bottom: 200px;
 
     .box__input--options {
       text-align: center;
@@ -104,15 +113,139 @@
         padding: 5px 0;
 
       }
+
       .box__input--option:hover {
         background-color: #afafaf;
       }
     }
-    &:hover{
+
+    &:hover {
       background-image: url("../assets/Icon-Arrow-Down.svg");
     }
+
     &:hover .box__input--options {
       opacity: 1;
+    }
+  }
+}
+
+.give-stuff-step-3 {
+  .box__input--text {
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+
+  .box__input--select {
+    font-size: 1rem;
+    position: relative;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 8px 140px 8px 18px;
+    border: 1px solid $primaryDarkGray;
+    background-image: url("../assets/Icon-Arrow-Up.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    font-weight: lighter;
+    transition: .2s;
+    width: 260px;
+    margin-bottom: 90px;
+
+    .box__input--options {
+      font-size: 1.1rem;
+      position: absolute;
+      text-align: center;
+      right: 0;
+      top: 50px;
+      width: 100%;
+      border: 1px solid $primaryDarkGray;
+      opacity: 0;
+      background-color: #EEEDEB;
+
+      .box__input--option {
+        padding: 5px 0;
+      }
+
+      .box__input--option:hover {
+        background-color: #afafaf;
+      }
+    }
+
+    &:hover {
+      background-image: url("../assets/Icon-Arrow-Down.svg");
+    }
+
+    &:hover .box__input--options {
+      opacity: 1;
+    }
+  }
+
+  .give-stuff-step__box--inputs.step3 {
+    flex-direction: row;
+    width: 650px;
+    flex-wrap: wrap;
+
+    .box__heading {
+      width: 100%;
+      font-size: 1.2rem;
+    }
+
+    .box__input-container:nth-of-type(2) {
+      .label-text:before {
+        content: "samotnym matkom";
+        width: 200px;
+      }
+    }
+    .box__input-container:nth-of-type(3) {
+      .label-text:before {
+        content: "bezdomnym";
+        width: 150px;
+      }
+    }
+    .box__input-container:nth-of-type(4) {
+      .label-text:before {
+        content: "niepełnosprawnym";
+        width: 200px;
+      }
+    }
+    .box__input-container:nth-of-type(5) {
+      .label-text:before {
+        content: "osobom starszym";
+        width: 200px;
+      }
+    }
+    .box__input--text {
+      .box__input {
+        text-align: center;
+      }
+      .label-text:before {
+        content: "dzieciom";
+        display: block;
+        color: black;
+        width: 100px;
+        position: relative;
+        line-height: 30px;
+        font-weight: normal;
+        font-size: 1.1rem;
+        padding: 8px 2px;
+      }
+      .box__input:checked + .label-text:before {
+      }
+      .label-text {
+        text-align: center;
+      }
+    }
+  }
+  .box__input-container.optional-organization{
+    .box__input--text{
+      font-size: 1.2rem;
+      .box__input{
+        margin-top: 20px;
+        display: block;
+        width: 400px;
+        padding: 4px 3px;
+        font-size: 1rem;
+        line-height: 1;
+      }
     }
   }
 }

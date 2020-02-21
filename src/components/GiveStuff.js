@@ -5,40 +5,47 @@ import ContactUs from "./contactUsSection";
 import GiveStuffMain from "./GiveStuffMain";
 import GiveStuffStep1 from "./GiveStuffStep1";
 import GiveStuffStep2 from "./GiveStuffStep2";
+import GiveStuffStep3 from "./GiveStuffStep3";
 
 export default class GiveStuff extends Component {
     state = {
-        'step1': 'active',
-        'step2': null,
-        'step3': null,
-        'step4': null,
-        'step5': null
+        'activeStep': 'step1',
+        'step1Choice' : null,
+        'step2Choice' : null,
+        'step3Localization' : null,
+        'step4Help' : null,
+        'step5Organization' : null
+
+
+
     };
-    changeStep = (step, isActive) => {
+
+    setStepValue = (step, value) => {
         this.setState({
-            [step]: isActive
+            [step]: value
+        })
+
+    };
+    changeStep = (activeStep) => {
+        this.setState({
+            'activeStep': activeStep
         })
     };
-    whichStep = () => {
-        if (this.state.step1 === 'active') {
-            return (
-                <GiveStuffStep1 changeStep={this.changeStep}/>
-            )
-        }
-        if (this.state.step2 === 'active') {
-            return (
-                <GiveStuffStep2 changeStep={this.changeStep}/>
-            )
-        }
+    setActive = ()=>{
+        return this.state.activeStep
     };
+
 
 
     render() {
+
         return (
             <div className="container">
                 <HomeHeaderLoggedIn/>
                 <GiveStuffMain/>
-                {this.whichStep()}
+                <GiveStuffStep1 isActive={this.setActive} setStepValue={this.setStepValue} changeStep={this.changeStep}/>
+                <GiveStuffStep2 isActive={this.setActive} setStepValue={this.setStepValue} changeStep={this.changeStep}/>
+                <GiveStuffStep3 isActive={this.setActive} setStepValue={this.setStepValue} changeStep={this.changeStep}/>
                 <ContactUs/>
             </div>
         );
