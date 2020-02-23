@@ -19,7 +19,7 @@ export default class GiveStuffStep3 extends Component {
         this.setState({
             localization: e.target.innerHTML
         }, () => {
-            this.props.setStepValue('step3Localization', this.state.bags)
+            this.props.setStepValue('step3Localization', this.state.localization)
         });
     };
     setValue = (e) => {
@@ -28,8 +28,6 @@ export default class GiveStuffStep3 extends Component {
         },()=>{
             this.props.setStepValue('step3Help', this.state.help)
         });
-
-        this.props.setStepValue('step1Choice', e.target.nextElementSibling.innerHTML);
         for (let i = 1; i <= 5; i++) {
             document.querySelector(`.give-stuff-step-3 .box__input.box__input-${i}`).checked = false;
         }
@@ -89,7 +87,7 @@ export default class GiveStuffStep3 extends Component {
                                     <input onClick={this.setValue} data-info='choice1'
                                            className='box__input box__input-1'
                                            type='checkbox'
-                                           data-name='dzieci'
+                                           data-name='dzieciom'
                                     />
                                     <span className="label-text"/>
                                 </label>
@@ -100,7 +98,7 @@ export default class GiveStuffStep3 extends Component {
                                     <input onClick={this.setValue} data-info='choice2'
                                            className='box__input box__input-2'
                                            type='checkbox'
-                                           data-name='samotne matki'
+                                           data-name='samotnym matkom'
                                     />
                                     <span className="label-text"/>
                                 </label>
@@ -110,7 +108,7 @@ export default class GiveStuffStep3 extends Component {
                                     <input onClick={this.setValue} data-info='choice3'
                                            className='box__input box__input-3'
                                            type='checkbox'
-                                           data-name='bezdomni'
+                                           data-name='bezdomnym'
                                     />
                                     <span
                                         className="label-text"/>
@@ -122,7 +120,7 @@ export default class GiveStuffStep3 extends Component {
                                     <input onClick={this.setValue} data-info='choice4'
                                            className='box__input box__input-4'
                                            type='checkbox'
-                                           data-name='niepełnosprawni'
+                                           data-name='niepełnosprawnym'
                                     />
                                     <span
                                         className="label-text"/>
@@ -133,7 +131,7 @@ export default class GiveStuffStep3 extends Component {
                                     <input onClick={this.setValue} data-info='choice5'
                                            className='box__input box__input-5'
                                            type='checkbox'
-                                           data-name='osoby starsze'
+                                           data-name='osobom starszym'
                                     />
                                     <span className="label-text"/>
                                 </label>

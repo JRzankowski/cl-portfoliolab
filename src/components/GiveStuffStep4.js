@@ -1,23 +1,73 @@
 import React, {Component} from 'react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 export default class GiveStuffStep4 extends Component {
     state = {
-        'street' : null,
-        'place' : null,
-        'zipCode' : null,
-        'telephone' : null,
-        'date' : null,
-        'hour' : null,
-        'notes' : null
+        'street': null,
+        'place': null,
+        'zipCode': null,
+        'telephone': null,
+        'hour': null,
+        'notes': null
+    };
+
+    handleChangeDate = date => {
+        this.setState({
+            date: date
+        },()=>{
+            this.props.setStepValue('step4Date',document.querySelector(".react-datepicker__input-container input").value)
+        });
+
+    };
+    handleChangeHour = hour => {
+        this.setState({
+            hour: hour
+        },()=>{
+            this.props.setStepValue('step4Hour', document.querySelector(".box__input--text.number .react-datepicker-wrapper .react-datepicker__input-container input").value)
+        });
     };
     handleClick = (e) => {
         if (e.target.classList.contains('give-stuff-step__box--next-btn')) {
-            if (this.state.bags) {
-                this.props.changeStep('step5')
+            if (this.state.street && this.state.place && this.state.zipCode && this.state.telephone && this.state.date && this.state.hour && this.state.notes) {
+                this.props.changeStep('summary')
             }
         } else if (e.target.classList.contains('give-stuff-step__box--previous-btn')) {
             this.props.changeStep('step3')
+        }
+    };
+
+    handleInput = (e) => {
+        if (e.target.classList.contains('street')) {
+            this.setState({
+                street: e.target.value
+            });
+            this.props.setStepValue('step4Street', this.state.street)
+        }
+        if (e.target.classList.contains('town')) {
+            this.setState({
+                place: e.target.value
+            });
+            this.props.setStepValue('step4Place', this.state.place)
+        }
+        if (e.target.classList.contains('zip-code')) {
+            this.setState({
+                zipCode: e.target.value
+            });
+            this.props.setStepValue('step4ZipCode', this.state.zipCode)
+        }
+        if (e.target.classList.contains('telephone')) {
+            this.setState({
+                telephone: e.target.value
+            });
+            this.props.setStepValue('step4Telephone', this.state.telephone)
+        }
+        if (e.target.classList.contains('text-area')) {
+            this.setState({
+                notes: e.target.value
+            });
+            this.props.setStepValue('step4Notes', this.state.notes)
         }
     };
 
@@ -38,31 +88,51 @@ export default class GiveStuffStep4 extends Component {
                             <div className="box__input-container">
                                 <p className='box__input__heading'>Adres odbioru:</p>
                                 <label className="box__input--text">
-                                    Ulica
-                                    <input className='box__input box__input-4' type='text'/>
+                                    <p> Ulica </p>
+                                    <input onInput={this.handleInput} className='box__input box__input-4 street'
+                                           type='text'/>
                                 </label>
                                 <label className="box__input--text">
-                                    Miasto
-                                    <input className='box__input box__input-4' type='text'/>
+                                    <p> Miasto </p>
+                                    <input onInput={this.handleInput} className='box__input box__input-4 town'
+                                           type='text'/>
                                 </label>
                                 <label className="box__input--text">
-                                    Kod <br/> pocztowy
-                                    <input className='box__input box__input-4' type='text'/>
+                                    <p> Kod <br/> pocztowy </p>
+                                    <input onInput={this.handleInput} className='box__input box__input-4 zip-code'
+                                           type='text'/>
                                 </label>
                                 <label className="box__input--text">
-                                    Number <br/> telefonu
-                                    <input className='box__input box__input-4' type='text'/>
+                                    <p> Number <br/> telefonu </p>
+                                    <input onInput={this.handleInput} className='box__input box__input-4 telephone'
+                                           type='text'/>
                                 </label>
                             </div>
                             <div className="box__input-container">
                                 <p className='box__input__heading'>Termin odbioru:</p>
                                 <label className="box__input--text">
-                                    Data
-                                    <input className='box__input box__input-4' type='date'/>
+                                    <p> Data</p>
+                                    <DatePicker
+                                        selected={this.state.date}
+                                        onChange={this.handleChangeDate}
+                                        minDate={new Date()}
+                                    />
                                 </label>
-                                <label className="box__input--text">
-                                    Godzina
-                                    <input className='box__input box__input-4' type='date'/>
+                                <label className="box__input--text number">
+                                    <p> Godzina </p>
+                                    <DatePicker
+                                        selected={this.state.hour}
+                                        onChange={this.handleChangeHour}
+                                        showTimeSelect
+                                        showTimeSelectOnly
+                                        timeIntervals={15}
+                                        timeCaption="Godzina"
+                                        dateFormat="h:mm"
+                                    />
+                                </label>
+                                <label className="box__input--text box__input--text-textarea">
+                                    <p> Uwagi dla <br/> kuriera </p>
+                                    <textarea onInput={this.handleInput} className='box__input box__input-4 text-area'/>
                                 </label>
 
                             </div>
