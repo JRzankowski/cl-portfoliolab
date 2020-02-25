@@ -4,27 +4,46 @@
   height: 100vh;
   position: relative;
   z-index: 5;
+  @media (max-width: 565px) and (max-height: 680px){
+    margin-top: 160px;
 
-
+  }
   &__img {
     width: 70%;
     background: url("../assets/Background-Contact-Form.jpg");
     background-size: cover;
     opacity: .2;
-
+    @media(max-width: 1570px) {
+      background-position: -100px;
+    }
+    @media(max-width: 1458px) {
+      background-position: -200px;
+    }
+    @media(max-width: 1336px) {
+      background-position: -350px;
+    }
+    @media(max-width: 1160px) {
+      display: none;
+    }
   }
-
   &__form {
     text-align: center;
     padding: 200px 20px;
     width: 550px;
     position: relative;
+    @media(max-width: 1160px) {
+      width: 100%;
+    }
 
     &--container {
       position: absolute;
       left: 30%;
       top: 33%;
       transform: translate(-50%, -50%);
+      @media(max-width: 1160px) {
+        top: 25%;
+        left: 50%;
+      }
     }
 
 
@@ -54,6 +73,10 @@
       color: green;
       opacity: 0;
       transition: .1s;
+      @media(max-width: 615px) {
+        top: 165px;
+        width: 100%;
+      }
     }
 
     &-message.error {
@@ -68,17 +91,26 @@
 
     .form {
       text-align: left;
+      @media(max-width: 615px) {
+
+      }
 
       .form__inputs {
         display: flex;
         justify-content: space-between;
         margin-bottom: 40px;
+        @media(max-width: 615px) {
+          flex-direction: column;
+        }
 
         &--label {
           width: 256px;
           font-size: 1rem;
           font-weight: bolder;
           position: relative;
+          @media(max-width: 615px) {
+           width: 100%;
+          }
 
           .form__inputs--input {
             width: 256px;
@@ -88,6 +120,9 @@
             outline: none;
             margin-top: 12px;
             padding: 4px 0;
+            @media(max-width: 615px) {
+              width: 100%;
+            }
           }
 
           .form__inputs--input.valid {
@@ -123,6 +158,10 @@
 
         &--label:nth-of-type(2) {
           margin-left: 15px;
+          @media(max-width: 615px) {
+            margin-left: 0;
+            margin-top: 30px;
+          }
 
         }
       }

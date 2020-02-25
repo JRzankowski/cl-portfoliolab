@@ -22,10 +22,16 @@
 
     &__top {
       text-align: center;
+      @media (max-width:582px){
+        margin-top: 50px;
+      }
 
       &--heading {
         color: $primaryBlack;
         font-size: 2.2rem;
+        @media (max-width:582px){
+          font-size: 1.7rem;
+        }
       }
 
       .decoration {
@@ -41,6 +47,9 @@
       flex-wrap: wrap;
       background-color: #F0F1F1;
       padding: 40px 67px;
+      @media (max-width:582px){
+        padding: 25px 67px;
+      }
 
       &--label {
         font-size: .9rem;
@@ -98,11 +107,23 @@
     &__button:nth-of-type(1){
       bottom: -20%;
       left: -15%;
+      @media (max-width:582px){
+        left: 10%;
+      }
+      @media (max-width:454px){
+        left: 15%;
+      }
     }
     &__button:nth-of-type(2){
       bottom: -20%;
       right: -15%;
       border: 1px solid $primaryBlack;
+      @media (max-width:582px){
+        right: 10%;
+      }
+      @media (max-width:454px){
+        right: 15%;
+      }
     }
   }
 }

@@ -60,9 +60,6 @@ export default class Login extends Component {
             e.target.classList.remove('valid', 'invalid');
         }
     };
-
-
-
     render() {
         return (
             <section className='login'>
