@@ -21,6 +21,7 @@ export default class GiveStuffStep3 extends Component {
         }, () => {
             this.props.setStepValue('step3Localization', this.state.localization)
         });
+        document.querySelector('.box__input--select.step3').classList.remove('active')
     };
     setValue = (e) => {
         this.setState({
@@ -41,6 +42,9 @@ export default class GiveStuffStep3 extends Component {
             this.props.setStepValue('step3Organization', this.state.organization)
         });
     };
+    handleActiveClick=(e)=>{
+        e.target.classList.toggle('active');
+    };
 
     render() {
         let activeClass = '';
@@ -57,7 +61,7 @@ export default class GiveStuffStep3 extends Component {
                         <div className="give-stuff-step__box--inputs">
                             <div className="box__input-container">
                                 <label className="box__input--text">Lokalizacja:
-                                    <div className='box__input--select'>
+                                    <div onClick={this.handleActiveClick} className='box__input--select step3'>
                                         {this.state.localization}
                                         <div className="box__input--options">
                                             <div data-value='1' onClick={this.handleOptionClick}

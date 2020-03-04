@@ -40,7 +40,7 @@ export default class GiveStuffMain extends Component {
                         </div>
                     </div>
                 </section>
-                <GiveStuffImportant/>
+                <GiveStuffImportant activeStep={this.props.activeStep}/>
             </>
         );
     }

@@ -9,7 +9,7 @@ import icon4 from '../assets/Icon-4.svg';
 export default class SimpleStepsSection extends Component {
     render() {
         return (
-            <div className='simple-steps-section'>
+            <div id='simpleSteps' className='simple-steps-section'>
                 <div className="simple-steps-section__box simple-steps-section__box--heading">
                     <h2 className='simple-steps-section__box--heading-title'>Wystarczą 4 proste kroki</h2>
                     <div className="decoration"/>

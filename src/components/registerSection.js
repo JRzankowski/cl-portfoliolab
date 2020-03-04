@@ -74,7 +74,7 @@ export default class Register extends Component {
                 <HomeHeader entryActive={this.state.entryActive}/>
                 <div className="register-box">
                     <div className="register-box__top">
-                        <h2 className="register-box__top--heading">Zaloguj się</h2>
+                        <h2 className="register-box__top--heading">Załóż konto</h2>
                         <div className="decoration"/>
                     </div>
                     <div className="register-box__panel">

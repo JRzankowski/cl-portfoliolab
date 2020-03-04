@@ -80,7 +80,7 @@ export default class ContactUs extends Component {
     render() {
         return (
             <>
-                <section className='contact'>
+                <section id='contact' className='contact'>
                     <div className="contact__img"/>
                     <div className="contact__form">
                         <div className="contact__form--container">

@@ -44,7 +44,7 @@ export default class GiveStuff extends Component {
         return (
             <div className="container">
                 <HomeHeaderLoggedIn/>
-                <GiveStuffMain/>
+                <GiveStuffMain activeStep={this.state.activeStep}/>
                 <GiveStuffStep1 isActive={this.setActive} setStepValue={this.setStepValue}
                                 changeStep={this.changeStep}/>
                 <GiveStuffStep2 isActive={this.setActive} setStepValue={this.setStepValue}

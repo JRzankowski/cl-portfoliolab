@@ -1,20 +1,51 @@
-import React, {Component} from "react";
+import React, {Component,useCallback, useContext} from "react";
 import HomeHeader from "./HomeHeader/HomeHeader";
-import {Link} from "react-router-dom";
+import { withRouter, Redirect} from "react-router";
+import {Link} from 'react-router-dom'
+import app from "../config/fire";
 
-export default class Login extends Component {
+import { AuthContext } from "./Auth.js";
 
+// const LoginAuth = ({ history }) => {
+//     const handleLogin = useCallback(
+//         async event => {
+//             event.preventDefault();
+//             const {email, password} = event.target.elements;
+//             try {
+//                 await app
+//                     .auth()
+//                     .signInWithEmailAndPassword(email.value, password.value);
+//                 history.push("/");
+//             } catch (error) {
+//                 alert(error);
+//             }
+//         },
+//         [history]
+//     );
+//
+//     const {currentUser} = useContext(AuthContext);
+//
+//     if (currentUser) {
+//         return <Redirect to="/Log In"/>;
+//     }
+// };
+
+
+ class Login extends Component {
     state = {
         entryActive: true,
         email: '',
         password: '',
     };
 
+
     componentWillUnmount() {
         this.setState({
             entryActive: false
         })
     }
+
+
 
 
     handleInput = e => {
@@ -28,7 +59,7 @@ export default class Login extends Component {
         if (e.target.classList.contains('password')) {
             if ((e.target.value.length) > 6) {
                 e.target.classList.remove('invalid');
-                e.target.classList.add('valid')
+                e.target.classList.add('valid');
                 this.setState({
                     password: e.target.value
                 })
@@ -60,6 +91,7 @@ export default class Login extends Component {
             e.target.classList.remove('valid', 'invalid');
         }
     };
+
     render() {
         return (
             <section className='login'>
@@ -69,7 +101,9 @@ export default class Login extends Component {
                         <h2 className="log-in-box__top--heading">Zaloguj się</h2>
                         <div className="decoration"/>
                     </div>
+                    <form onSubmit={LoginAuth}>
                     <div className="log-in-box__panel">
+
                         <label className='log-in-box__panel--label' htmlFor='email'>Email
                             <input onInput={this.handleInput} className='log-in-box__panel--input email' type="email"
                                    id="email"/>
@@ -82,11 +116,12 @@ export default class Login extends Component {
                         </label>
                     </div>
                     <Link className='log-in-box__button' to='/register'>Załóż konto</Link>
-                    <Link className='log-in-box__button' to='/logged in' type='submit' onClick={this.logIn}>Zaloguj
-                        się</Link>
+                    <button className='log-in-box__button' type='submit'>Zaloguj się</button>
+                    </form>
                 </div>
             </section>
         )
     }
 }
+export default withRouter(Login)
 

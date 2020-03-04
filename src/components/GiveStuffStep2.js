@@ -20,6 +20,10 @@ export default class GiveStuffStep2 extends Component {
         }, () => {
             this.props.setStepValue('step2Choice', this.state.bags)
         });
+        document.querySelector('.box__input--select').classList.remove('active')
+    };
+    handleActiveClick=(e)=>{
+        e.target.classList.toggle('active');
     };
 
     render() {
@@ -38,7 +42,7 @@ export default class GiveStuffStep2 extends Component {
                             <h2 className='box__heading'>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h2>
                             <div className="box__input-container">
                                 <label className="box__input--text">Liczba 60l worków:
-                                    <div className='box__input--select'>
+                                    <div onClick={this.handleActiveClick} className='box__input--select'>
                                         {this.state.bags}
                                         <div className="box__input--options">
                                             <div data-value='1' onClick={this.handleOptionClick}

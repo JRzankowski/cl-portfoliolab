@@ -1,13 +1,16 @@
 .give-stuff-step {
-  position: relative;
-  top: -43px;
-  height: 90vh;
   padding: 36px 142px;
-  background: url("../assets/giveStuff-step-background.jpg") no-repeat;
-  background-size: cover;
+  background: url("../assets/giveStuff-step-background.jpg") no-repeat 0 -90px;
   width: 100%;
   display: none;
+  overflow: hidden;
+  @media(max-width: 1120px) {
+    background: #EEEDEB;
+  }
+  @media(max-width: 765px) {
+    padding: 36px 40px 100px 40px;
 
+  }
 
   &.active {
     display: block;
@@ -32,6 +35,11 @@
         display: flex;
         margin-bottom: 40px;
 
+        .box__input--text {
+
+        }
+
+
         .box__input {
           display: none;
 
@@ -47,7 +55,11 @@
           color: #ecf0f1;
           content: '';
           cursor: pointer;
-          margin: -2px 23px 0 0
+          margin: -2px 23px 0 0;
+          @media(max-width: 583px) {
+            margin: -13px 11px 6px 2px;
+
+          }
         }
 
         .box__input:checked + .label-text:before {
@@ -59,6 +71,12 @@
         .label-text {
           color: $primaryBlack;
           font-size: 1.2rem;
+
+
+          @media(max-width: 583px) {
+
+
+          }
         }
       }
     }
@@ -66,14 +84,19 @@
     &--next-btn,
     &--previous-btn {
       cursor: pointer;
-      margin-top: 110px;
-      width: 170px;
+      margin-right: 10px;
+      //width: 120px;
       background-color: transparent;
       border: 1px solid $primaryDarkGray;
       padding: 23px 32px;
       transition: .2s;
       font-size: 1.1rem;
-      margin-left: 20px;
+      @media(max-width: 340px) {
+        //width: 100px;
+        margin-right: 2px;
+
+      }
+
     }
 
     &--next-btn:hover {
@@ -97,6 +120,10 @@
     transition: .2s;
     width: 255px;
     margin-bottom: 200px;
+    @media(max-width: 500px) {
+      margin-left: 0;
+      margin-top: 10px;
+    }
 
     .box__input--options {
       text-align: center;
@@ -106,12 +133,11 @@
       top: 50px;
       width: 60px;
       border: 1px solid $primaryDarkGray;
-      opacity: 0;
+      display: none;
       transition: .1s;
 
       .box__input--option {
         padding: 5px 0;
-
       }
 
       .box__input--option:hover {
@@ -119,14 +145,16 @@
       }
     }
 
-    &:hover {
-      background-image: url("../assets/Icon-Arrow-Down.svg");
-    }
+  }
 
-    &:hover .box__input--options {
-      opacity: 1;
+  .box__input--select.active {
+    background-image: url("../assets/Icon-Arrow-Down.svg");
+
+    .box__input--options {
+      display: block;
     }
   }
+
 }
 
 .give-stuff-step-3 {
@@ -148,9 +176,12 @@
     font-weight: lighter;
     transition: .2s;
     width: 260px;
-    margin-bottom: 90px;
+    @media(max-width: 500px) {
+      width: 100%;
+    }
 
     .box__input--options {
+      z-index: 222;
       font-size: 1.1rem;
       position: absolute;
       text-align: center;
@@ -158,8 +189,8 @@
       top: 50px;
       width: 100%;
       border: 1px solid $primaryDarkGray;
-      opacity: 0;
       background-color: #EEEDEB;
+      display: none;
 
       .box__input--option {
         padding: 5px 0;
@@ -170,12 +201,12 @@
       }
     }
 
-    &:hover {
+    &.active {
       background-image: url("../assets/Icon-Arrow-Down.svg");
-    }
 
-    &:hover .box__input--options {
-      opacity: 1;
+      .box__input--options {
+        display: block;
+      }
     }
   }
 
@@ -183,6 +214,10 @@
     flex-direction: row;
     width: 650px;
     flex-wrap: wrap;
+    @media(max-width: 500px) {
+      width: 100%;
+
+    }
 
     .box__heading {
       width: 100%;
@@ -234,9 +269,6 @@
         padding: 8px 2px;
       }
 
-      .box__input:checked + .label-text:before {
-      }
-
       .label-text {
         text-align: center;
       }
@@ -244,6 +276,8 @@
   }
 
   .box__input-container.optional-organization {
+    margin-bottom: 20px;
+
     .box__input--text {
       font-size: 1.2rem;
 
@@ -254,6 +288,10 @@
         padding: 4px 3px;
         font-size: 1rem;
         line-height: 1;
+        @media(max-width: 500px) {
+          width: 100%;
+
+        }
       }
     }
   }
@@ -272,7 +310,10 @@
     .box__input-container {
       display: flex;
       flex-direction: column;
-      width: 40%;
+      margin-right: 100px;
+      @media (max-width: 500px) {
+        margin-right: 0;
+      }
 
       .box__input__heading {
         font-weight: bolder;
@@ -281,11 +322,51 @@
 
       .box__input--text {
         font-size: 1.1rem;
+        position: relative;
+        @media (max-width: 400px) {
+          margin-bottom: 10px;
+        }
 
         & p {
           display: inline-block;
           width: 65px;
+          @media (max-width: 400px) {
+            display: block;
+            margin-bottom: 5px;
+            width: auto;
+          }
+
         }
+      }
+
+      .box__input.valid {
+        border-color: green
+      }
+
+      .box__input.invalid {
+        border-color: red
+      }
+
+      .error {
+        font-size: 0.8em;
+        font-weight: bold;
+        color: red;
+        opacity: 0;
+        transition: .1s;
+        position: absolute;
+        display: block;
+        width: 100% !important;
+        bottom: 56%;
+        left: 99px;
+        text-align: left;
+        @media (max-width: 400px) {
+          bottom: -26%;
+          left: 0;
+        }
+      }
+
+      .error.active {
+        opacity: 1;
       }
 
       .box__input--text:nth-of-type(3),
@@ -293,6 +374,9 @@
         .box__input {
           position: relative;
           bottom: 10px;
+          @media (max-width: 400px) {
+            bottom: 0
+          }
         }
       }
 
@@ -302,6 +386,10 @@
         display: inline-block;
         background-color: transparent;
         border: 1px solid $primaryDarkGray;
+        @media (max-width: 400px) {
+          display: block;
+          margin-left: 0;
+        }
       }
 
       .box__input--text-textarea {
@@ -310,6 +398,9 @@
         p {
           position: relative;
           bottom: 70px;
+          @media (max-width: 400px) {
+            bottom: 0;
+          }
         }
 
         .text-area {
@@ -319,7 +410,14 @@
         }
       }
     }
+
+    .give-stuff-step__box--next-btn,
+    .give-stuff-step__box--previous-btn {
+      width: 100px;
+      margin-right: 222px;
+    }
   }
+
 }
 
 .give-stuff-step-summary {
@@ -343,11 +441,13 @@
 
   .summary-container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     .box__input-container.summary-info {
       display: flex;
       flex-direction: column;
-      width: 40%;
+      margin-right: 100px;
       line-height: 1.2;
 
       .box__input__heading.summary-info {
@@ -380,23 +480,40 @@
 
     }
   }
+  .give-stuff-step__box--next-btn,
+  .give-stuff-step__box--previous-btn {
+    @media (max-width: 400px) {
+      margin-bottom: 10px;
+
+    }
+  }
 }
 
 .give-stuff-step.give-stuff-step-confirmed {
   position: relative;
-
+  background: #EEEDEB;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  &.active{
+    display: flex;
+  }
   .summary-confirmed__box {
-    position: absolute;
-    top: 40%;
-    left: 25%;
-    transform: translate(-50%, -50%);
     width: 600px;
     text-align: center;
 
     .summary-confirmed__box--text {
       font-size: 2.1rem;
       font-weight: lighter;
+      @media (max-width: 470px){
+        font-size: 1.7rem;
+      }
+      @media (max-width: 420px){
+        font-size: 1.4rem;
+      }
     }
+
     .decoration {
       width: 253px;
       height: 33px;

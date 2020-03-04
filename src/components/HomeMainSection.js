@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 export default class HomeMainSection extends Component {
     render() {
         return (
-            <section className="main-section">
+            <section id='start' className="main-section">
                 <div className="main-section--heroImg"/>
                 <div className="main-section__panel">
                     <div className="panel__top">

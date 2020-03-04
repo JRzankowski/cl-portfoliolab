@@ -1,69 +1,56 @@
+
 .give-stuff {
-  display: flex;
-  position: relative;
   z-index: 4;
-  overflow: visible;
-  height: 70vh;
-  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  //height: calc(100vh - 165px);
+  //height: 100vh;
   animation: fade_in .2s linear both;
   opacity: 0;
+  overflow: hidden;
+  padding-bottom: 260px;
+  @media(max-width: 851px) {
+    //height: 100vh;
+  }
+
   @keyframes fade_in {
     100% {
       opacity: 1;
     }
-    
-  }
-  @media(max-width: 1250px) {
-    justify-content: center;
-    align-items: center;
   }
 
   &__img {
-    position: relative;
-    top: -170px;
+    position: absolute;
     z-index: 7;
-    background: url("../assets/giveStuff-hero-img.jpg") no-repeat;
+    background: url("../assets/giveStuff-hero-img.jpg") no-repeat 0 -130px;
     background-size: cover;
-    height: 120%;
-    width: 900px;
-    left: -90px;
-
+    filter: blur(2px);
+    opacity: .15;
+    min-height: 100vh;
+    width: 100%;
     transition: .1s;
-    @media (max-width: 1650px) {
-      //width: 700px;
-      right: 0px;
-      //background-position: -598px -193px;
-    }
-    @media(max-width: 1438px) {
-      //width: 600px;
-      //background-position: -773px -193px;
-    }
-    @media(max-width: 1250px) {
-      display: none;
-    }
+    left: 0;
+    bottom: 0;
+
+
   }
 
   &__main {
     z-index: 9;
-    position: relative;
-    left: 9%;
-    top: 64%;
-    transform: translate(-50%, -50%);
     transition: .1s;
     text-align: center;
 
-    @media(max-width: 1250px) {
-      position: absolute;
-      left: 50%;
-      top: 30%;
-
-    }
-
     .main__heading {
-      font-size: 2rem;
+      font-size: 2.4rem;
       color: $primaryBlack;
       font-weight: normal;
       line-height: 1.5;
+      @media(max-width: 693px) {
+        font-size: 2rem;
+      }
+      @media(max-width: 476px) {
+        padding: 0 40px;
+      }
     }
 
     .decoration {
@@ -75,22 +62,56 @@
     }
 
     .main__text {
-      font-size: 1.8rem;
+      font-size: 2.4rem;
       font-weight: lighter;
       color: $primaryBlack;
       margin-bottom: 70px;
+      @media(max-width: 693px) {
+        font-size: 2rem;
+      }
+      @media(max-width: 476px) {
+        font-size: 1.8rem;
+        padding: 0 30px;
+      }
     }
 
     .main__steps {
       display: flex;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      @media(max-width: 693px) {
+        flex-wrap: wrap;
+        width: 80%;
+      }
+
+      .step-4, .step-3 {
+        @media(max-width: 693px) {
+          top: 21px;
+        }
+      }
 
       &--step {
         position: relative;
         border: 0.75px solid #3C3C3C;
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
         transform: rotate(45deg);
-        margin-right: 30px;
+        margin-right: 20px;
+        box-shadow: inset 0 0 14px 0 rgba(0, 0, 0, 0.2);
+        @media(max-width: 851px) {
+          width: 120px;
+          height: 120px;
+        }
+        @media(max-width: 693px) {
+          width: 150px;
+          height: 150px;
+        }
+        @media(max-width: 476px) {
+          width: 110px;
+          height: 110px;
+        }
+
 
         .step-container {
           position: absolute;
@@ -98,44 +119,85 @@
           top: 43%;
           transform: translate(-50%, -50%) rotate(-45deg);
           width: 80%;
+          @media(max-width: 851px) {
+            left: 50%;
+            top: 52%;
+          }
 
           .step__number {
             font-weight: lighter;
             display: block;
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             color: $primaryBlack;
+            padding-bottom: 10px;
+            @media(max-width: 851px) {
+              font-size: 1.6rem;
+              padding-bottom: 0;
+            }
+            @media(max-width: 476px) {
+              font-size: 1.3rem;
+            }
           }
 
           .step__description {
             font-weight: lighter;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: $primaryBlack;
             margin-top: 30px;
+            @media(max-width: 851px) {
+              font-size: 1.2rem;
+              margin-top: 20px;
+            }
+            @media(max-width: 476px) {
+              font-size: 1rem;
+            }
           }
 
         }
       }
     }
+
+
   }
 }
 
 .give-stuff__important {
   z-index: 10;
-  position: relative;
-  top: -41px;
-  width: 100%;
+  display: flex;
+  //width: 100%;
+
   background-color: $primaryYellow;
-  padding: 32px 100px 42px;
+  padding: 15px 50px;
+  align-items: center;
+  @media(max-width: 851px) {
+    padding: 20px 0;
+
+  }
 
   &-container {
-    line-height: .7;
+    padding: 0 100px;
+    @media(max-width: 851px) {
+      padding: 0 20px;
+      line-height: 1.1;
+
+    }
+
   }
 
   &--heading {
     font-size: 2rem;
+    margin-bottom: 0;
+    @media(max-width: 851px) {
+      font-size: 1.6rem;
+
+    }
   }
 
   &--text {
     font-size: 1rem;
+    @media(max-width: 851px) {
+      font-size: .9rem;
+
+    }
   }
 }

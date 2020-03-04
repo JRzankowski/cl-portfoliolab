@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Link} from 'react-scroll'
 import {Link as LinkRouter} from "react-router-dom";
 import HomeHeaderEntry from "./HomeHeaderEntry";
+import whoWeHelpSection from "../whoWeHelpSection";
 
 export default class HomeHeaderNav extends Component {
     state = {
@@ -35,7 +36,10 @@ export default class HomeHeaderNav extends Component {
     hideMenu = ()=>{
         document.querySelector('.header__panel.header__panel--nav').classList.remove('active');
     };
+
     render() {
+
+
 
         if (!this.state.entryActive) {
             return (
@@ -52,12 +56,12 @@ export default class HomeHeaderNav extends Component {
                                     menu_open
                                 </i>
                                 {this.state.mobileMenu ? <HomeHeaderEntry entryActive={this.props.entryActive}/> : null}
-                                <Link onClick={this.hideMenu} smooth={true} to='' className='panel-nav__list--item active'>Start</Link>
-                                <Link onClick={this.hideMenu} smooth={true} to='columns' className='panel-nav__list--item'>O co chodzi?</Link>
-                                <Link onClick={this.hideMenu} smooth={true} to='aboutUs' className='panel-nav__list--item'>O nas</Link>
-                                <Link onClick={this.hideMenu} smooth={true} to='whoWeHelp' className='panel-nav__list--item'>Fundacja i
+                                <Link onClick={this.hideMenu} smooth={true} to='start'  className='panel-nav__list--item active'>Start</Link>
+                                <Link onClick={this.hideMenu} smooth={true} to='simpleSteps'  className='panel-nav__list--item'>O co chodzi?</Link>
+                                <Link onClick={this.hideMenu} smooth={true} to='aboutUs'  className='panel-nav__list--item'>O nas</Link>
+                                <Link onClick={this.hideMenu} smooth={true} to='whoWeHelp'  className='panel-nav__list--item'>Fundacja i
                                     organizacje</Link>
-                                <Link smooth={true} to='' className='panel-nav__list--item'>Kontakt</Link>
+                                <Link onClick={this.hideMenu} smooth={true} to='contact' className='panel-nav__list--item'>Kontakt</Link>
                             </ul>
                         </nav>
                     </div>
