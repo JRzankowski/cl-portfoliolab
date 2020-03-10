@@ -1,4 +1,3 @@
-import data from "../data";
 import React, {Component} from "react";
 
 export default class Content extends Component {
@@ -21,13 +20,12 @@ export default class Content extends Component {
                     }
                     return (
                         <>
-                            <div key={index} className={dataPageStyle}>
-                                <p className='who-we-help-table__title'>{data.name}</p>
+                            <div  className={dataPageStyle}>
+                                <p  className='who-we-help-table__title'>{data.name}</p>
                                 <p className='who-we-help-table__mission'>{data.mission}</p>
                                 <p className='who-we-help-table__stuff'>{data.stuff}</p>
                             </div>
                         </>
-
                     );
                 }
             )

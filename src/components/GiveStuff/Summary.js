@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-import Icon1 from '../assets/Icon-1.svg'
-import Icon2 from '../assets/Icon-4.svg'
+import Icon1 from '../../assets/Icon-1.svg'
+import Icon2 from '../../assets/Icon-4.svg'
 
 
 export default class Summary extends Component {

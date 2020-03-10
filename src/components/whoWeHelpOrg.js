@@ -4,7 +4,6 @@ import data from './data.json';
 import pagination from "./whoWeHelpLogic/pagination";
 import Content from "./whoWeHelpLogic/content";
 import pageActiveCheck from "./whoWeHelpLogic/pageActiveCheck";
-import ContactUs from "./contactUsSection";
 import PaginationRender from "./whoWeHelpLogic/paginationRender";
 
 export default class WhoWeHelpOrg extends Component {

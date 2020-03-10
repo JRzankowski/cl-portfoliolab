@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-import HomeHeaderLoggedIn from "./HomeHeader/HomeHeaderLoggedIn";
-import ContactUs from "./contactUsSection";
+import HomeHeaderLoggedIn from "../HomeHeader/HomeHeaderLoggedIn";
+import ContactUs from "../contactUsSection";
 import GiveStuffMain from "./GiveStuffMain";
 import GiveStuffStep1 from "./GiveStuffStep1";
 import GiveStuffStep2 from "./GiveStuffStep2";

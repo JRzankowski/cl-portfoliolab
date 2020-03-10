@@ -12,7 +12,7 @@ export default class Home extends Component {
     render() {
         return (
             <div className="container">
-                <HomeHeader/>
+                <HomeHeader user={this.props.user}/>
                 <HomeMainSection/>
                 <Columns/>
                 <SimpleStepsSection/>

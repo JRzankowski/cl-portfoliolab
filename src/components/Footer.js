@@ -9,8 +9,8 @@ export default class Footer extends Component {
             <footer className='footer'>
                 <p className='footer__copyright'>Copyright by Coders Lab</p>
                 <div className="footer__socials">
-                    <a href='#'><img className='footer__socials--fb' src={fb} alt='facebook icon'/></a>
-                    <a href='#'><img className='footer__socials--ig' src={ig} alt='instagram icon'/></a>
+                    <a href='/'><img className='footer__socials--fb' src={fb} alt='facebook icon'/></a>
+                    <a href='/'><img className='footer__socials--ig' src={ig} alt='instagram icon'/></a>
                 </div>
             </footer>
         );

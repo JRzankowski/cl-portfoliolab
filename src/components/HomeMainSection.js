@@ -1,7 +1,26 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
+import app from "../config/fire";
 
 export default class HomeMainSection extends Component {
+state={
+    giveStuffForms:false
+};
+    componentDidMount() {
+        this.authListener();
+    }
+
+    authListener = () => {
+        app.auth().onAuthStateChanged((user) => {
+            if (user) {
+                this.setState({giveStuffForms: true});
+                localStorage.setItem('user', user.uid);
+            } else {
+                this.setState({giveStuffForms: false});
+                localStorage.removeItem('user');
+            }
+        });
+    };
     render() {
         return (
             <section id='start' className="main-section">
@@ -14,10 +33,10 @@ export default class HomeMainSection extends Component {
                     </div>
                     <div className="panel__bottom">
                         <button className="panel__bottom-button">
-                            <Link className='panel__bottom-button--link' to='/login'>Oddaj <br/> rzeczy</Link>
+                            <Link className='panel__bottom-button--link' to={this.state.giveStuffForms ? '/give-stuff' : '/login'}>Oddaj <br/> rzeczy</Link>
                         </button>
                         <button className="panel__bottom-button">
-                            <Link className='panel__bottom-button--link' to='/login'>Zorganizuj <br/> zbiórkę</Link>
+                            <Link className='panel__bottom-button--link' to={this.state.giveStuffForms ? '/give-stuff' : '/login'}>Zorganizuj <br/> zbiórkę</Link>
                         </button>
                     </div>
                 </div>

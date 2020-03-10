@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import HomeHeaderLoggedIn from "./HomeHeader/HomeHeaderLoggedIn";
 import HomeMainSection from "./HomeMainSection";
 import Columns from "./columnsSection";
@@ -9,10 +8,11 @@ import WhoWeHelp from "./whoWeHelpSection";
 import ContactUs from "./contactUsSection";
 
 export default class HomeLoggedIn extends Component {
+
     render() {
         return (
             <div className="container">
-                <HomeHeaderLoggedIn/>
+                <HomeHeaderLoggedIn user={this.props.user}/>
                 <HomeMainSection/>
                 <Columns/>
                 <SimpleStepsSection/>

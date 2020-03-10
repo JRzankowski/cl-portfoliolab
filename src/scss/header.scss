@@ -57,6 +57,7 @@
         cursor: pointer;
       }
     }
+
     .header__panel.header__panel-entry {
       @media (max-width: 850px) {
         display: flex;
@@ -64,29 +65,43 @@
           a {
             transition: .1s;
             font-size: 1.1rem;
-
           }
+        }
+        .header__panel-entry--user-email {
+          font-weight: 900;
+          display: inline-block;
+          margin-right: 0;
+          position: absolute;
+          top: 45px;
+          right: 20px;
+          span{
+            font-size: 1rem;
+          }
+        }
+        .header__panel-entry--stuff {
+          position: relative;
+          right: 20px;
+        }
+        .header__panel-entry--log-out {
+          position: relative;
+          right: 20px;
         }
       }
     }
+
     .header__panel.header__panel-entry {
       .header__panel-entry--login,
       .header__panel-entry--register {
         position: relative;
         left: -50px;
         top: -20px;
-
       }
-
     }
   }
 
   .header__panel.header__panel--nav {
     @media (max-width: 850px) {
-      width: 300px
-    }
-
-    @media (max-width: 850px) {
+      width: 300px;
       transition: .2s;
       opacity: 1;
       position: fixed;
@@ -110,15 +125,9 @@
             margin: 0 0 20px 0;
             font-size: 1.5rem;
             font-weight: bolder;
-
-          }
-
-          .active {
-            border: none;
           }
 
         }
-
       }
     }
   }
@@ -128,7 +137,6 @@
       display: none;
     }
   }
-
 
   &__panel {
     display: flex;
@@ -193,6 +201,12 @@
           margin-left: 20px;
           padding: 9px 20px;
           color: $primaryBlack;
+          position: relative;
+          transition: .1s;
+
+          &:hover {
+            color: #d0d0d0;
+          }
         }
 
         &--item.active {
@@ -202,5 +216,4 @@
       }
     }
   }
-
 }

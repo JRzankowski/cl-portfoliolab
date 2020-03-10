@@ -5,7 +5,6 @@ import icon2 from '../assets/Icon-2.svg';
 import icon3 from '../assets/Icon-3.svg';
 import icon4 from '../assets/Icon-4.svg';
 
-
 export default class SimpleStepsSection extends Component {
     render() {
         return (

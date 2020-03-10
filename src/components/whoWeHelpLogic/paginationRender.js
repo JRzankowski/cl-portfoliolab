@@ -1,7 +1,5 @@
 import React, {Component} from "react";
-
 export default class PaginationRender extends Component {
-
     render() {
         if (this.props.numberOfOrg === 'local') {
             return (
@@ -42,6 +40,4 @@ export default class PaginationRender extends Component {
             )
         }
     }
-
-
 }

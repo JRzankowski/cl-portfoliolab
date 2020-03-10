@@ -6,7 +6,7 @@ export default class HomeHeader extends Component {
     render() {
         return (
             <header className='header'>
-                <HomeHeaderEntryLoggedIn entryActive ={this.props.entryActive}/>
+                <HomeHeaderEntryLoggedIn user={this.props.user} entryActive ={this.props.entryActive}/>
                 <HomeHeaderNav entryActive ={this.props.entryActive}/>
             </header>
         );

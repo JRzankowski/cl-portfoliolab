@@ -86,7 +86,6 @@ export default class GiveStuffStep4 extends Component {
         if (e.target.classList.contains('zip-code')) {
             regex = /[0-9]{2}-[0-9]{3}/;
             if (regex.test(e.target.value)) {
-                console.log('chuj')
                 e.target.classList.remove('invalid');
                 e.target.classList.add('valid');
                 e.target.previousElementSibling.classList.remove('active');
