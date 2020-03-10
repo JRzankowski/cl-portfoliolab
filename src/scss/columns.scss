@@ -5,6 +5,7 @@
   background-color: $primaryYellow;
   position: relative;
   top: -165px;
+  z-index: 9;
   @media(max-width: 865px){
     top: -100px;
   }
